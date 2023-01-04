@@ -81,7 +81,7 @@ func RunDockerCommand(ctx context.Context, workingDir string, command ...string)
 }
 
 func RunDockerComposeCommand(ctx context.Context, workingDir string, command ...string) error {
-	dockerCmd := exec.Command("docker-compose", command...)
+	dockerCmd := exec.Command("docker compose", command...)
 	dockerCmd.Dir = workingDir
 	_, err := runCommand(ctx, dockerCmd)
 	return err

@@ -30,7 +30,7 @@ func CheckDockerConfig() error {
 		return fmt.Errorf("an error occurred while running docker. Is docker installed on your computer?")
 	}
 
-	dockerComposeCmd := exec.Command("docker-compose", "-v")
+	dockerComposeCmd := exec.Command("docker", "compose version")
 	_, err = dockerComposeCmd.Output()
 
 	if err != nil {
